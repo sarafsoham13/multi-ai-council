@@ -48,7 +48,7 @@ if prompt := st.chat_input("Enter your master prompt for the Council:"):
         import streamlit as st
 
 # Example display structure for your council output:
-if st.button("🚀 Launch Deliberation"):
+
     if not openai_key or not deepseek_key or not gemini_key:
         st.warning("Please enter all API keys in the sidebar first.")
     else:
@@ -59,7 +59,7 @@ if st.button("🚀 Launch Deliberation"):
             # gemini_response = ...
 
             # --- Display Outputs ---
-            st.subheader("🏛️ Council Deliberation Results")
+            
             
             # Example for displaying OpenAI
             # st.markdown("### OpenAI")
