@@ -1,26 +1,24 @@
-    import streamlit as st
-
-    st.set_page_config(page_title="Multi-AI Council", layout="wide")
+import streamlit as st
+ st.set_page_config(page_title="Multi-AI Council", layout="wide")
     # Initialize session state for chat history
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-
-    st.title("🏛️ Multi-AI Council Command Center")
-    st.sidebar.header("Configuration")
-    with st.sidebar:
+    # if "messages" not in st.session_state:
+ st.session_state.messages = []
+ st.title("🏛️ Multi-AI Council Command Center")
+ st.sidebar.header("Configuration")
+ with st.sidebar:
             st.header("Chat Sessions")
             if st.button("🗑️ Clear Chat History"):
                 st.session_state.messages = []
                 st.rerun()
     # API Keys input in sidebar
     openai_key = st.sidebar.text_input("OpenAI API Key", type="password")
-    deepseek_key = st.sidebar.text_input("DeepSeek API Key", type="password")
-    gemini_key = st.sidebar.text_input("Gemini API Key", type="password")
+ deepseek_key = st.sidebar.text_input("DeepSeek API Key", type="password")
+ gemini_key = st.sidebar.text_input("Gemini API Key", type="password")
 
-    prompt = st.text_area("Enter your master prompt for the Council:")
+ prompt = st.text_area("Enter your master prompt for the Council:")
 
     # 1. Render all past messages so they stay on screen when you scroll up
-    for message in st.session_state.messages:
+ for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
