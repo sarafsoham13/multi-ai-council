@@ -52,7 +52,7 @@ if prompt := st.chat_input("Enter your master prompt for the Council:"):
     if not openai_key or not deepseek_key or not gemini_key:
         st.warning("Please enter all API keys in the sidebar first.")
     else:
-        with st.spinner("Council is deliberating..."):
+     with st.spinner("Council is deliberating..."):
             # --- Put your API call logic here ---
             # openai_response = ...
             # deepseek_response = ...
